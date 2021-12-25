@@ -1,0 +1,36 @@
+@import "./Variables.scss";
+body {
+    background: $bg-color;
+}
+
+.MainContainer {
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: $main-font;
+    background-color: $bg-container-color;
+    color: $text-color;
+
+    @media (min-width: $desktop) {
+        max-width: 860px;
+        padding: 0 10px;
+    }
+}
+
+.visually-hidden:not(:focus):not(:active), 
+input[type="checkbox"].visually-hidden, 
+input[type="radio"].visually-hidden {
+    position: absolute;
+
+    width: 1px; 
+    height: 1px; 
+    margin: -1px; 
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%); 
+    clip: rect(0 0 0 0);
+    overflow: hidden;  
+}

@@ -1,0 +1,26 @@
+@import "../../_MainContainer/Variables.scss";
+
+.Input {
+    width: 95%;
+    background: inherit;
+    border: none;
+    border-bottom: solid 2px $text-color; 
+    color: $text-color;
+    font-size: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    outline: none;
+
+    &::placeholder {
+        color: $text-color;
+        opacity: .8;
+    }
+
+    &:focus {
+        border-bottom: solid 2px $hover-color; 
+        &::placeholder {
+            color: $hover-color;
+            opacity: .8;
+        }
+    }
+}
