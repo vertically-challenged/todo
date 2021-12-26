@@ -12,9 +12,8 @@ const creatingTaskList = (tasks, setTasks) => {
             key={index}
             tasks={tasks} 
             setTasks={setTasks} 
-            index={index}>
-                {task}
-            </Task>)
+            index={index}
+            task={task}/>)
     })
     return taskList
 }

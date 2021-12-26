@@ -3,8 +3,10 @@ import Checkbox from '../../../common/Checkbox/Checkbox'
 import CrossButton from '../../../common/CrossButton/CrossButton'
 import './Task.scss'
 
-const checkBoxOnChangeHandler = (completed, setCompleted) => { 
-    (completed == true) ? setCompleted(completed = false) : setCompleted(completed = true)
+const checkBoxOnChangeHandler = (task, tasks, setTasks, index) => {
+    let newArrTask = [...tasks]
+    newArrTask[index].completed = (task.completed == true) ? false: true
+    setTasks(tasks = [...newArrTask])
 }
 
 const crossButtonOnClick = (tasks, setTasks, index) => {
@@ -13,17 +15,16 @@ const crossButtonOnClick = (tasks, setTasks, index) => {
     setTasks(tasks = [...newArrTask])
 }
 
-const Task = ({children, tasks, setTasks, index}) => {
-    const [completed, setCompleted] = useState(false)
+const Task = ({tasks, setTasks, index, task}) => {
 
     return (
         <li className='Task'>
             <Checkbox 
-                completed={completed}
-                onChange={() => checkBoxOnChangeHandler(completed, setCompleted)}
+                completed={task.completed}
+                onChange={() => checkBoxOnChangeHandler(task, tasks, setTasks, index)}
             />
-            {completed || <span>{children}</span>}
-            {!completed || <span className='crossedOut'>{children}</span>}
+            {task.completed || <span>{task.text}</span>}
+            {!task.completed || <span className='crossedOut'>{task.text}</span>}
             <CrossButton 
                 onClick={() => {
                     crossButtonOnClick(tasks, setTasks, index)

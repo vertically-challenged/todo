@@ -6,6 +6,7 @@ import './ToDo.scss'
 
 const ToDo = (props) => {
     const [tasks, setTasks] = useState([])
+    
     return (
         <section className='ToDo'>
             <TaskAddingForm 

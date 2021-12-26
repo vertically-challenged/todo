@@ -6,7 +6,10 @@ const onSubmitHandler = (event, inputValue, setInputValue, tasks, setTasks) => {
     event.preventDefault()
     setTasks(tasks = [
         ...tasks, 
-        inputValue
+        {
+            text: inputValue, 
+            completed: false
+        }
     ])
     setInputValue(inputValue = '')
 }
