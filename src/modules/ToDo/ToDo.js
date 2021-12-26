@@ -5,12 +5,18 @@ import TaskList from './TaskList/TaskList'
 import './ToDo.scss'
 
 const ToDo = (props) => {
-    const [tasks, setTasks] = useState(['12'])
+    const [tasks, setTasks] = useState([])
     return (
-        <section>
-            <TaskAddingForm/>
+        <section className='ToDo'>
+            <TaskAddingForm 
+                tasks={tasks}
+                setTasks={setTasks}
+            />
             <TaskCounter taskCount={tasks.length}/>
-            <TaskList/>
+            <TaskList 
+                tasks={tasks}
+                setTasks={setTasks}
+            />
         </section>
     )
 }

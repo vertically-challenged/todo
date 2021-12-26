@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import Input from '../../common/Input/Input'
 import './TaskAddingForm.scss'
 
-const onSubmitHandler = (event, inputValue, setInputValue) => {
+const onSubmitHandler = (event, inputValue, setInputValue, tasks, setTasks) => {
     event.preventDefault()
+    setTasks(tasks = [
+        ...tasks, 
+        inputValue
+    ])
     setInputValue(inputValue = '')
 }
 
-const TaskAddingForm = () => {
+const TaskAddingForm = ({tasks, setTasks}) => {
     const [inputValue, setInputValue] = useState('')
     return (
         <section className='TaskAddingForm'>
@@ -15,11 +19,17 @@ const TaskAddingForm = () => {
                 action="/" 
                 method='post'
                 onSubmit={(event) => {
-                    onSubmitHandler(event, inputValue, setInputValue)
+                    onSubmitHandler(
+                        event, 
+                        inputValue, 
+                        setInputValue, 
+                        tasks, 
+                        setTasks
+                    )
                 }}
             >
                 <Input 
-                    placeHolder={'Введите название задачи'}
+                    placeholder={'Введите название задачи'}
                     value={inputValue}
                     onChange={(event) => {
                         setInputValue(event.target.value)

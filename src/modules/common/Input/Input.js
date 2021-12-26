@@ -1,12 +1,12 @@
 import React from 'react'
 import './Input.scss'
 
-const Input = ({placeHolder, value, onChange}) => {
+const Input = ({placeholder, value, onChange}) => {
     return (
         <input 
             className='Input' 
             type='text'
-            placeHolder={placeHolder}
+            placeholder={placeholder}
             value={value}
             onChange={onChange}
         />

@@ -1,0 +1,16 @@
+.Task{
+    text-align: left;
+    margin: 10px 0;
+    display: flex;
+
+    button{
+        margin: auto;
+        margin-right: 0;
+    }
+
+
+}
+
+.crossedOut {
+    text-decoration: line-through;
+}

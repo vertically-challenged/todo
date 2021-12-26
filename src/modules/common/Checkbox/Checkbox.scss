@@ -1,0 +1,20 @@
+@import '../../_MainContainer/Variables.scss';
+
+.Checkbox {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    margin-right: 10px;
+    border: solid 2px $text-color;
+    border-radius: 2px;
+    width: .7rem;
+    height: .7rem;
+    cursor: pointer;
+
+    &.completed::after {
+        position: absolute;
+        top: -8px;
+        content: "\2713"; 
+    }
+}
+

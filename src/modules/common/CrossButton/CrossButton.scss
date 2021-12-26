@@ -1,0 +1,36 @@
+@import '../../_MainContainer/Variables.scss';
+
+.CrossButton {
+	position: relative;
+    top: -1px;
+	width: 1.5rem;
+	height: 1.5rem;
+	opacity: 0.5;
+    transition: opacity ease 0.5s;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+
+	&:hover {
+		opacity: 1;
+	}
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        display: block;
+        width: 1.5rem;
+        height: 3px;
+        background: red;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+    
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
