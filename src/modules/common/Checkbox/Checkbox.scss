@@ -18,3 +18,13 @@
     }
 }
 
+input:focus ~ .Checkbox {
+    border: solid 2px $hover-color;
+    &.completed::after {
+        position: absolute;
+        top: -8px;
+        content: "\2713"; 
+        color: $hover-color;
+    }
+}
+

@@ -9,6 +9,7 @@
     transition: opacity ease 0.5s;
     background-color: inherit;
     border: none;
+    outline: none;
     cursor: pointer;
 
 	&:hover {
@@ -33,4 +34,11 @@
     &::after {
         transform: rotate(-45deg);
     }
+
+    &:focus {
+		&::before, 
+        &::after {
+            background: $hover-color;
+        }
+	}   
 }

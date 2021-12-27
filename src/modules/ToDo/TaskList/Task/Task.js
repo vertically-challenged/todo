@@ -20,6 +20,7 @@ const Task = ({tasks, setTasks, index, task}) => {
     return (
         <li className='Task'>
             <Checkbox 
+                index={index}
                 completed={task.completed}
                 onChange={() => checkBoxOnChangeHandler(task, tasks, setTasks, index)}
             />
