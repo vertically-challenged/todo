@@ -4,36 +4,25 @@ import './TaskList.scss'
 
 import Task from './Task/Task'
 
-const creatingTaskList = (tasks, setTasks, setScroll) => {
+const onChangeVisibilitySensor = (isVisible, setScroll) => {
+    if (isVisible) {
+        setScroll(true) 
+    } else {
+        setScroll(false)
+    }
+}
+
+const creatingTaskList = (tasks, setTasks) => {
     if (!tasks.length) return []
     let taskList = []
 
-    function onChangeVisibilitySensor (isVisible) {
-        if (isVisible) {
-            setScroll(true) 
-        } else {
-            setScroll(false)
-        }
-    }
-
     tasks.map((task, index) => {
-        if (index == tasks.length-1) {
-            taskList.push(<VisibilitySensor onChange={onChangeVisibilitySensor}>
-                <Task 
-                key={index}
-                tasks={tasks} 
-                setTasks={setTasks} 
-                index={index}
-                task={task}/>
-                </VisibilitySensor>)
-        } else {
-            taskList.push(<Task 
-                key={index}
-                tasks={tasks} 
-                setTasks={setTasks} 
-                index={index}
-                task={task}/>)
-        }
+        taskList.push(<Task 
+            key={index}
+            tasks={tasks} 
+            setTasks={setTasks} 
+            index={index}
+            task={task}/>)
     })
     return taskList
 }
@@ -50,6 +39,11 @@ const TaskList = ({tasks, setTasks}) => {
     return (
         <ul ref={List} className='TaskList'>
             {creatingTaskList(tasks, setTasks, setScroll)}
+            <VisibilitySensor onChange={(isVisible) => {
+                onChangeVisibilitySensor(isVisible, setScroll)
+            }}>
+                <div className='Sensor'></div>
+            </VisibilitySensor>
         </ul>
     )
 }
