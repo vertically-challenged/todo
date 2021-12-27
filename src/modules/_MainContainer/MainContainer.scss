@@ -1,6 +1,10 @@
 @import "./Variables.scss";
 body {
     background: $bg-color;
+
+    @media (max-width: $mobile), (max-width: 750px) and (max-height: $mobile-h){
+        background-color: $bg-container-color
+    }
 }
 
 .MainContainer {
@@ -11,6 +15,10 @@ body {
     font-family: $main-font;
     background-color: $bg-container-color;
     color: $text-color;
+
+    @media (max-width: $mobile), (max-width: 750px) and (max-height: $mobile-h){
+        margin-top: 0; 
+    }
 
     @media (min-width: $desktop) {
         max-width: 860px;

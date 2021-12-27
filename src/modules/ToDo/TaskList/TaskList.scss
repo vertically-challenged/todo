@@ -1,4 +1,10 @@
+@import '../../_MainContainer/Variables.scss';
+
 .TaskList {
     list-style: none;
     padding: 0 20px;
+
+    @media (max-width: $mobile), (max-width: 750px) and (max-height: $mobile-h){
+        padding: 40px 20px;
+    }
 }

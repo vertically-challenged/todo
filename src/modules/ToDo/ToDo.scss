@@ -1,3 +1,11 @@
+@import '../_MainContainer/Variables.scss';
+
 .ToDo {
+    display: flex;
+    flex-direction: column;
     padding-bottom: 10px;
+
+    @media (max-width: $mobile), (max-width: 750px) and (max-height: $mobile-h){
+        flex-direction: column-reverse; 
+    }
 }

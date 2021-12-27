@@ -7,8 +7,9 @@ import './ToDo.scss'
 const ToDo = (props) => {
 
     let tasksFromLocalStorage = []
-    if (!window.localStorage.getItem('tasks')) tasksFromLocalStorage = []
-    if (window.localStorage.getItem('tasks')) tasksFromLocalStorage = JSON.parse(window.localStorage.getItem('tasks'))
+    if (window.localStorage.getItem('tasks')) {
+        tasksFromLocalStorage = JSON.parse(window.localStorage.getItem('tasks'))
+    }
     const [tasks, setTasks] = useState(tasksFromLocalStorage)
 
     useEffect(() => {

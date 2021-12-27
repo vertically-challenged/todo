@@ -1,5 +1,17 @@
+@import '../../_MainContainer/Variables.scss';
+
 .TaskCounter {
     padding: 10px 20px;
     text-align: left;
     font-size: .9rem;
+
+    @media (max-width: $mobile), (max-width: 750px) and (max-height: $mobile-h){
+        position: fixed; 
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 15px 20px;
+        background-color: $bg-container-color;
+        z-index: 2;
+    }
 }
