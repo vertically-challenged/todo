@@ -5,11 +5,7 @@ import './TaskList.scss'
 import Task from './Task/Task'
 
 const onChangeVisibilitySensor = (isVisible, setScroll) => {
-    if (isVisible) {
-        setScroll(true) 
-    } else {
-        setScroll(false)
-    }
+    setScroll(isVisible) 
 }
 
 const creatingTaskList = (tasks, setTasks) => {
